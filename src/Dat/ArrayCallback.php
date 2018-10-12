@@ -22,5 +22,15 @@ class ArrayCallback{
         }
         return $result;
     }
+    public static function find($arr, $callback){
+        if($arr && is_array($arr)){
+            foreach($arr as $key=>$val){
+                if($callback($val)){
+                    return $val;
+                }
+            }
+        }
+        return null;
+    }
 }
 ?>
