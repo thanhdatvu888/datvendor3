@@ -11,5 +11,16 @@ class ArrayCallback{
         }
         return $result;
     }
+    public static function filter($arr, $callback){
+        $result = [];
+        if($arr && is_array($arr)){
+            foreach($arr as $key=>$val){
+                if($callback($val)){
+                    $result[] = $val;
+                }
+            }
+        }
+        return $result;
+    }
 }
 ?>
